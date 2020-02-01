@@ -16,5 +16,15 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         transform.position += speed * Time.deltaTime * Vector3.Normalize(BIGGeneratorGO.transform.position - transform.position);
+        if((BIGGeneratorGO.transform.position - transform.position).x <= 0)
+        {
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+            transform.Rotate(new Vector3(60, 0, 0));
+        }
+        else
+        {
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+            transform.Rotate(new Vector3(-60, 180, 0));
+        }
     }
 }
