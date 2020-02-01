@@ -18,5 +18,10 @@ public class EnemyHealth : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        if ("EnemyTarget".Equals(collision.tag))
+        {
+            collision.gameObject.GetComponent<MachineHealth>().DealDamage();
+            Destroy(gameObject);
+        }
     }
 }
