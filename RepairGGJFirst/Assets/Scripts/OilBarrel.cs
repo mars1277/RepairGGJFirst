@@ -35,9 +35,12 @@ public class OilBarrel : InteractableObject
         {
             transform.SetParent(null);
             OnHold = false;
-            if(Vector3.Distance(transform.position, BigGenerator.Instance.transform.position)<PlayerMovement.Instance.maximumInteractionDistance)
+            if(!BigGenerator.Instance.CurrentBarrel && Vector3.Distance(PlayerMovement.Instance.transform.position, BigGenerator.Instance.transform.position) <PlayerMovement.Instance.maximumInteractionDistance)
             {
                 transform.SetParent(BigGenerator.Instance.transform);
+                Inserted = true;
+                BigGenerator.Instance.CurrentBarrel = this;
+
             }
         }
         else

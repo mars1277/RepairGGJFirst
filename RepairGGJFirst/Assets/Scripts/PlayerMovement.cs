@@ -48,7 +48,15 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             InteractableObject target = InteractableObject.Instances.Where(x => Vector3.Distance(transform.position, x.transform.position) < maximumInteractionDistance).OrderBy(x => Vector3.Distance(transform.position, x.transform.position)).FirstOrDefault();
-            target.Interact();
+            if (target == null)
+            {
+                Debug.Log("no target");
+            }
+            else
+            {
+                Debug.LogFormat("interact with {0}", target.gameObject.name);
+            }
+            target?.Interact();
         }
 
         if (!usingTwoKeyToMove)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class TurretShooting : MonoBehaviour
+public class TurretShooting : InteractableObject
 {
     public GameObject targetGO = null;
     public GameObject bulletGOPrefab;
@@ -12,6 +12,7 @@ public class TurretShooting : MonoBehaviour
     public float bulletTimer = 0f;
     public float bulletCD = 1f;
     public float range = 2f;
+
 
     public float workingTime = 10.2f;
     public float workingTimer = 0f;
@@ -26,6 +27,11 @@ public class TurretShooting : MonoBehaviour
     {
         BIGGeneratorGO = GameObject.Find("BIGGenerator");
         playerGO = GameObject.Find("Player");
+    }
+
+    public override void Interact()
+    {
+        Repair();
     }
 
     // Update is called once per frame
@@ -82,10 +88,7 @@ public class TurretShooting : MonoBehaviour
                 targetGO = null;
             }
         }
-        if (Input.GetKey(KeyCode.R))
-        {
-            Repair();
-        }
+        
         if (Input.GetKey(KeyCode.F))
         {
             outOfPower = !outOfPower;

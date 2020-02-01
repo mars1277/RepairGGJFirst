@@ -6,6 +6,8 @@ public class BigGenerator : InteractableObject
 {
     public Transform holder;
     public static BigGenerator Instance;
+    public OilBarrel CurrentBarrel;
+
 
     public void Awake()
     {
