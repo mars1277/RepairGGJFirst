@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class TurretShooting : MonoBehaviour
 {
@@ -93,6 +94,8 @@ public class TurretShooting : MonoBehaviour
 
     GameObject FindNearestEnemy()
     {
+        //var e = EnemyHealth.instances.Where(x => Vector3.Distance(transform.position, x.transform.position) < range).OrderBy(x => Vector3.Distance(transform.position, x.transform.position)).FirstOrDefault();
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         float minDistance = float.MaxValue;
         GameObject nearestEnemy = null;
