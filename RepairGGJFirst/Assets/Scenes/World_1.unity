@@ -456,8 +456,6 @@ MonoBehaviour:
   - {fileID: 749154096}
   items:
   - {fileID: 2604099031147871346}
-  OilLevel: 1000
-  ConsumeTime: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,7 +1437,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0f132e9454a1946a424d0f18acf350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OilLevel: 100
+  OilLevel: 10
+  Inserted: 0
 --- !u!1001 &5341901519426380698
 PrefabInstance:
   m_ObjectHideFlags: 0

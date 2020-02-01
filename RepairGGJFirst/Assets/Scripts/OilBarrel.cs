@@ -8,10 +8,16 @@ public class OilBarrel : MonoBehaviour
     public float OilLevel = 10;
     public bool Inserted = false;
 
+
+
     void Update()
     {
+        if (Inserted == false)
+        {
+            return;
+        }
 
-        if (OilLevel > 0)
+            if (OilLevel > 0)
         {
             OilLevel = OilLevel - 1 * Time.deltaTime;
         }
