@@ -6,6 +6,19 @@ public class EnemyHealth : MonoBehaviour
 {
     public int health = 3;
 
+    public static List<EnemyHealth> instances = new List<EnemyHealth>();
+
+    private void OnEnable()
+    {
+        instances.Add(this);
+    }
+
+    private void OnDisable()
+    {
+        instances.Remove(this);
+
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         Debug.Log(collision.gameObject.name);
@@ -17,6 +30,11 @@ public class EnemyHealth : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+        if ("EnemyTarget".Equals(collision.tag))
+        {
+            collision.gameObject.GetComponent<MachineHealth>().DealDamage();
+            Destroy(gameObject);
         }
     }
 }
