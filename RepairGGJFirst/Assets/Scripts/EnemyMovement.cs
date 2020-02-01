@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
    // public GameObject cameraGO;
     public float speed = 5f;
 
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
