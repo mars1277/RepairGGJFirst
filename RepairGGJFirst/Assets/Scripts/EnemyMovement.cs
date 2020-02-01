@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     public GameObject BIGGeneratorGO;
    // public GameObject cameraGO;
     public float speed = 5f;
+    public Vector3 destination;
 
     public NavMeshAgent agent;
 
@@ -23,8 +24,10 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  transform.position += speed * Time.deltaTime * Vector3.Normalize(BIGGeneratorGO.transform.position - transform.position);
-        if((BIGGeneratorGO.transform.position - transform.position).x <= 0)
+        destination = BIGGeneratorGO.GetComponent<WhoIsTheTarget>().newTarget.transform.position;
+        agent.SetDestination(destination);
+        //  transform.position += speed * Time.deltaTime * Vector3.Normalize(BIGGeneratorGO.transform.position - transform.position);
+        if ((destination - transform.position).x <= 0)
         {
            transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.Rotate(new Vector3(60, 0, 0));
