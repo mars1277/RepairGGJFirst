@@ -1,11 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 10.0f;
     private float sqrtTwo = 0.70710678f;
+    public float maximumInteractionDistance = 2;
+    public static PlayerMovement Instance;
+    public Transform holder;
+
+    public void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -35,6 +44,13 @@ public class PlayerMovement : MonoBehaviour
             usingTwoKeyToMove = true;
             transform.position += new Vector3(-speed * Time.deltaTime * sqrtTwo, 0, -speed * Time.deltaTime * sqrtTwo);
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            InteractableObject target = InteractableObject.Instances.Where(x => Vector3.Distance(transform.position, x.transform.position) < maximumInteractionDistance).OrderBy(x => Vector3.Distance(transform.position, x.transform.position)).FirstOrDefault();
+            target.Interact();
+        }
+
         if (!usingTwoKeyToMove)
         {
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))

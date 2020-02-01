@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OilBarrel : MonoBehaviour
+public class OilBarrel : InteractableObject
 {
 
     public float OilLevel = 10;
     public bool Inserted = false;
-
+    public bool OnHold = false;
 
 
     void Update()
@@ -26,6 +26,20 @@ public class OilBarrel : MonoBehaviour
         {
         Destroy(gameObject);
             Debug.Log("destroy");
+        }
+    }
+
+    public override void Interact()
+    {
+        if (OnHold)
+        {
+            transform.SetParent(null);
+            OnHold = false;
+        }
+        else
+        {
+            transform.SetParent(PlayerMovement.Instance.holder);
+            OnHold = true;
         }
     }
 }
