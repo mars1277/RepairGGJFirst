@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holder: {fileID: 2640522841810322609}
+  CurrentBarrel: {fileID: 0}
 --- !u!1 &6089713348702072455
 GameObject:
   m_ObjectHideFlags: 0

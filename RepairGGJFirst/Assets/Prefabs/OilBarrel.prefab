@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7926794272517824493}
   - component: {fileID: 7926794272517824490}
   - component: {fileID: 2604099031147871347}
+  - component: {fileID: 3187336062380245957}
   m_Layer: 0
   m_Name: OilBarrel
   m_TagString: Untagged
@@ -84,6 +85,21 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2604099031147871347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7926794272517824488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e0f132e9454a1946a424d0f18acf350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OilLevel: 10
+  Inserted: 0
+  OnHold: 0
+--- !u!114 &3187336062380245957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
