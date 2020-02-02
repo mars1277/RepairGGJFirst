@@ -16,7 +16,6 @@ public class EnemyHealth : MonoBehaviour
     private void OnDisable()
     {
         instances.Remove(this);
-
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -28,13 +27,25 @@ public class EnemyHealth : MonoBehaviour
             Destroy(collision);
             if (health <= 0)
             {
-                Destroy(gameObject);
+                {
+                    EnemySpawn.Instance.currentEnemyNumber--;
+                    Debug.Log(EnemySpawn.Instance.currentEnemyNumber);
+                    Destroy(transform.parent.gameObject);
+                    Destroy(gameObject);
+                    
+                }
             }
         }
+
         if ("EnemyTarget".Equals(collision.tag))
         {
+            EnemySpawn.Instance.currentEnemyNumber--;
+            Debug.Log(EnemySpawn.Instance.currentEnemyNumber);
+            Debug.Log("collided");
             collision.gameObject.GetComponent<MachineHealth>().DealDamage();
+            Destroy(transform.parent.gameObject);
             Destroy(gameObject);
         }
     }
 }
+
