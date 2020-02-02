@@ -52,9 +52,11 @@ public class EnemyMovement : MonoBehaviour
         transform.parent.GetComponent<NavMeshAgent>().enabled = false;
         int fallTimer = 0;
         int fallTime = 30;
+        float step = 0.01f;
         while (fallTimer < fallTime)
         {
-            yield return new WaitForSeconds(0.01f);
+            transform.parent.transform.position += new Vector3(0, 0, 0) / fallTime * kickPower * Mathf.Pow((fallTimer + 1), 2);
+            yield return new WaitForSeconds(step);
         }
         transform.parent.GetComponent<NavMeshAgent>().enabled = true;
     }
