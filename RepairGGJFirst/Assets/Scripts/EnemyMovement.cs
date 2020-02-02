@@ -39,4 +39,10 @@ public class EnemyMovement : MonoBehaviour
         }
       //  transform.rotation = Quaternion.LookRotation(cameraGO.transform.position - transform.position, transform.up);
     }
+
+    public void SlowDownPls()
+    {
+        speed = 1;
+        Debug.Log("decreased speed");
+    }
 }
