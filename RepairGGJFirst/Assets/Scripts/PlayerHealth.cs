@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health = 50;
+    public int health = 5;
 
     void Update()
     {
@@ -25,7 +25,9 @@ public class PlayerHealth : MonoBehaviour
         health--;
         if (health <= 0)
         {
-            SceneManager.LoadScene("Lose", LoadSceneMode.Single);
+            SceneManager.LoadScene("GameOver" +
+                "" +
+                "", LoadSceneMode.Single);
         }
     }
 }

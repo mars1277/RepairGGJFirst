@@ -41,7 +41,7 @@ public class EnemyMovement : MonoBehaviour
         }
       //  transform.rotation = Quaternion.LookRotation(cameraGO.transform.position - transform.position, transform.up);
     }
-
+    
     public void KickedBack()
     {
         StartCoroutine(KickBack());
@@ -57,5 +57,11 @@ public class EnemyMovement : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         transform.parent.GetComponent<NavMeshAgent>().enabled = true;
+    }
+
+    public void SlowDownPls()
+    {
+        speed = 1;
+        Debug.Log("decreased speed");
     }
 }
