@@ -29,6 +29,7 @@ public class EnemyHealth : MonoBehaviour
             {
                 {
                     EnemySpawn.Instance.currentEnemyNumber--;
+                    PlayerPrefs.SetInt("points", PlayerPrefs.GetInt("points") + 1);
                     Debug.Log(EnemySpawn.Instance.currentEnemyNumber);
                     EnemySpawn.Instance.CheckEndWave();
                     Destroy(transform.parent.gameObject);
@@ -41,6 +42,7 @@ public class EnemyHealth : MonoBehaviour
         if ("EnemyTarget".Equals(collision.tag))
         {
             EnemySpawn.Instance.currentEnemyNumber--;
+            PlayerPrefs.SetInt("points", PlayerPrefs.GetInt("points") + 1);
             Debug.Log(EnemySpawn.Instance.currentEnemyNumber);
             EnemySpawn.Instance.CheckEndWave();
             Debug.Log("collided");

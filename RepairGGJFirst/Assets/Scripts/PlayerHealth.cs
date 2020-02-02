@@ -7,8 +7,9 @@ public class PlayerHealth : MonoBehaviour
 {
     public int health = 5;
 
-    void Update()
+    void Start()
     {
+        PlayerPrefs.SetInt("points", 0);
     }
 
     private void OnTriggerEnter(Collider collision)
