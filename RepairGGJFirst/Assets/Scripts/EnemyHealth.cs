@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int health = 3;
+    public int health = 1;
 
     public static List<EnemyHealth> instances = new List<EnemyHealth>();
 

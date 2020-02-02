@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 10.0f;
     private float sqrtTwo = 0.70710678f;
-    public float maximumInteractionDistance = 2;
+    public float maximumInteractionDistance = 3.5f;
     public static PlayerMovement Instance;
     public Transform holder;
 

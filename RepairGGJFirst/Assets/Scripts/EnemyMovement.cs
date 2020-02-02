@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public GameObject BIGGeneratorGO;
    // public GameObject cameraGO;
-    public float normalspeed = 5f;
+    public float normalspeed = 2.5f;
     public float speed;
     public Vector3 destination;
 

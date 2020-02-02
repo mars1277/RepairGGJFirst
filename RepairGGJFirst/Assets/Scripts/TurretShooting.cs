@@ -10,7 +10,7 @@ public class TurretShooting : InteractableObject
     private GameObject BIGGeneratorGO;
     private GameObject playerGO;
     public float bulletTimer = 0f;
-    public float bulletCD = 1f;
+    public float bulletCD = 0.5f;
     public float range = 2f;
     public Sprite goodSprite;
     public Sprite redSprite;
