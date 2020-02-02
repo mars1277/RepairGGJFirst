@@ -18,6 +18,11 @@ public class SlowingTurret : InteractableObject
 
     public bool outOfPower = false;
 
+    void Start()
+    {
+        BIGGeneratorGO = GameObject.Find("BIGGenerator");
+    }
+
     public override void Interact()
     {
         Repair();
