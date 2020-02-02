@@ -9,6 +9,8 @@ public class OilBarrel : InteractableObject
     public bool Inserted = false;
     public bool OnHold = false;
 
+    public GameObject Fuelized;
+
 
     void Update()
     {

@@ -20,7 +20,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         if ("Bullet".Equals(collision.tag))
         {
             health--;
@@ -30,6 +30,7 @@ public class EnemyHealth : MonoBehaviour
                 {
                     EnemySpawn.Instance.currentEnemyNumber--;
                     Debug.Log(EnemySpawn.Instance.currentEnemyNumber);
+                    EnemySpawn.Instance.CheckEndWave();
                     Destroy(transform.parent.gameObject);
                     Destroy(gameObject);
                     
@@ -41,6 +42,7 @@ public class EnemyHealth : MonoBehaviour
         {
             EnemySpawn.Instance.currentEnemyNumber--;
             Debug.Log(EnemySpawn.Instance.currentEnemyNumber);
+            EnemySpawn.Instance.CheckEndWave();
             Debug.Log("collided");
             collision.gameObject.GetComponent<MachineHealth>().DealDamage();
             Destroy(transform.parent.gameObject);
