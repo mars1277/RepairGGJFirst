@@ -26,7 +26,14 @@ public class SlowingTurret : InteractableObject
     // Update is called once per frame
     void Update()
     {
-        //outOfPower = IsGeneratorOutOfPower();
+        if (BIGGeneratorGO.GetComponent<BigGenerator>().CurrentBarrel == null)
+        {
+            outOfPower = true;
+        }
+        else
+        {
+            outOfPower = false;
+        }
         if (!(outOfPower && !destroyed))
         {
             slowingTimer += Time.deltaTime;
