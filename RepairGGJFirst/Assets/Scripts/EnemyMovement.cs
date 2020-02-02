@@ -12,6 +12,8 @@ public class EnemyMovement : MonoBehaviour
 
     public NavMeshAgent agent;
 
+    public float kickPower = 0.01f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,5 +40,22 @@ public class EnemyMovement : MonoBehaviour
             transform.Rotate(new Vector3(-60, 180, 0));
         }
       //  transform.rotation = Quaternion.LookRotation(cameraGO.transform.position - transform.position, transform.up);
+    }
+
+    public void KickedBack()
+    {
+        StartCoroutine(KickBack());
+    }
+
+    private IEnumerator KickBack()
+    {
+        transform.parent.GetComponent<NavMeshAgent>().enabled = false;
+        int fallTimer = 0;
+        int fallTime = 30;
+        while (fallTimer < fallTime)
+        {
+            yield return new WaitForSeconds(0.01f);
+        }
+        transform.parent.GetComponent<NavMeshAgent>().enabled = true;
     }
 }
