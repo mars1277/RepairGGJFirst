@@ -33,25 +33,29 @@ public class PlayerMovement : MonoBehaviour
         {
             usingTwoKeyToMove = true;
             transform.position += new Vector3(speed * Time.deltaTime * sqrtTwo, 0, speed * Time.deltaTime * sqrtTwo);
-            gameObject.GetComponent<Roadhouse>().direction = Directions.UP_RIGHT;
+            Roadhouse.Instance.direction = Directions.UP_RIGHT;
+            Roadhouse.Instance.UpdateCapsule();
         }
         if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
             usingTwoKeyToMove = true;
             transform.position += new Vector3(speed * Time.deltaTime * sqrtTwo, 0, -speed * Time.deltaTime * sqrtTwo);
-            gameObject.GetComponent<Roadhouse>().direction = Directions.DOWN_RIGHT;
+            Roadhouse.Instance.direction = Directions.DOWN_RIGHT;
+            Roadhouse.Instance.UpdateCapsule();
         }
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)))
         {
             usingTwoKeyToMove = true;
             transform.position += new Vector3(-speed * Time.deltaTime * sqrtTwo, 0, speed * Time.deltaTime * sqrtTwo);
-            gameObject.GetComponent<Roadhouse>().direction = Directions.UP_LEFT;
+            Roadhouse.Instance.direction = Directions.UP_LEFT;
+            Roadhouse.Instance.UpdateCapsule();
         }
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
             usingTwoKeyToMove = true;
             transform.position += new Vector3(-speed * Time.deltaTime * sqrtTwo, 0, -speed * Time.deltaTime * sqrtTwo);
-            gameObject.GetComponent<Roadhouse>().direction = Directions.DOWN_LEFT;
+            Roadhouse.Instance.direction = Directions.DOWN_LEFT;
+            Roadhouse.Instance.UpdateCapsule();
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -73,22 +77,26 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
-                gameObject.GetComponent<Roadhouse>().direction = Directions.RIGHT;
+                Roadhouse.Instance.direction = Directions.RIGHT;
+                Roadhouse.Instance.UpdateCapsule();
             }
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 transform.position += new Vector3(-speed * Time.deltaTime, 0, 0);
-                gameObject.GetComponent<Roadhouse>().direction = Directions.LEFT;
+                Roadhouse.Instance.direction = Directions.LEFT;
+                Roadhouse.Instance.UpdateCapsule();
             }
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
                 transform.position += new Vector3(0, 0, speed * Time.deltaTime);
-                gameObject.GetComponent<Roadhouse>().direction = Directions.UP;
+                Roadhouse.Instance.direction = Directions.UP;
+                Roadhouse.Instance.UpdateCapsule();
             }
             if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
                 transform.position += new Vector3(0, 0, -speed * Time.deltaTime);
-                gameObject.GetComponent<Roadhouse>().direction = Directions.DOWN;
+                Roadhouse.Instance.direction = Directions.DOWN;
+                Roadhouse.Instance.UpdateCapsule();
             }
         }
     }

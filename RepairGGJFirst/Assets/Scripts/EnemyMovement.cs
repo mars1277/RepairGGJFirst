@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
 
     public NavMeshAgent agent;
 
-    public float kickPower = 0.01f;
+    public float kickPower = 0.004f;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +44,7 @@ public class EnemyMovement : MonoBehaviour
     
     public void KickedBack()
     {
+        Debug.Log("kicked");
         StartCoroutine(KickBack());
     }
 
@@ -55,7 +56,9 @@ public class EnemyMovement : MonoBehaviour
         float step = 0.01f;
         while (fallTimer < fallTime)
         {
-            transform.parent.transform.position += new Vector3(0, 0, 0) / fallTime * kickPower * Mathf.Pow((fallTimer + 1), 2);
+            fallTimer++;
+            Debug.Log(new Vector3(1, 0, 0) / fallTime * kickPower * Mathf.Pow(fallTimer, 2));
+            transform.parent.transform.position += Vector3.Normalize(transform.parent.transform.position - GameObject.Find("Player").transform.position) / fallTime * kickPower * Mathf.Pow((fallTimer + 1), 2);
             yield return new WaitForSeconds(step);
         }
         transform.parent.GetComponent<NavMeshAgent>().enabled = true;

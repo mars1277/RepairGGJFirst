@@ -260,9 +260,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5008658720812327420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5453c4b102a59e4ebc10941ea8dd83d, type: 3}
+  m_Script: {fileID: 11500000, guid: 15094a7362380b64c9de76b773d7d990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minEnemyNumber: 3
+  maxEnemyNumber: 5
   enemySpawnPoints:
   - {fileID: 5008658719534182690}
   - {fileID: 5008658719940654509}
@@ -271,13 +273,12 @@ MonoBehaviour:
   - {fileID: 5008658720984648773}
   - {fileID: 5008658721460927493}
   - {fileID: 5008658720787224441}
-  - {fileID: 5008658720127540568}
+  - {fileID: 5008658720564260760}
   - {fileID: 5008658720127540568}
   - {fileID: 5008658719676573297}
   items:
-  - {fileID: 6812497342886672492, guid: 8ca71e3233c974749bc59d27d44cef36, type: 3}
-  minEnemyNumber: 4
-  maxEnemyNumber: 6
+  - {fileID: 0}
+  currentEnemyNumber: 0
 --- !u!1 &5008658720984648772
 GameObject:
   m_ObjectHideFlags: 0
