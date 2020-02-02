@@ -22,11 +22,11 @@ public class EnemySpawn : MonoBehaviour
         for (int i = 0; i < currentEnemyNumber; i++)
         {
             SpawnEnemy();
+            Debug.Log("First Wave");
         }
 
         minEnemyNumber++;
         maxEnemyNumber++;
-        Debug.Log("minimum" + minEnemyNumber + "maximum" + maxEnemyNumber);
 
         Instance = this;
     }

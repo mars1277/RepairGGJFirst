@@ -20,6 +20,7 @@ public class OilBarrel : InteractableObject
             if (OilLevel > 0)
         {
             OilLevel = OilLevel - 1 * Time.deltaTime;
+            Debug.Log("decrease level");
         }
 
         if(OilLevel <= 0)
@@ -39,6 +40,7 @@ public class OilBarrel : InteractableObject
             {
                 transform.SetParent(BigGenerator.Instance.transform);
                 Inserted = true;
+                this.transform.position = new Vector3();
                 BigGenerator.Instance.CurrentBarrel = this;
 
             }
