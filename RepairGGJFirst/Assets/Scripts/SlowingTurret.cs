@@ -21,6 +21,11 @@ public class SlowingTurret : InteractableObject
     public Sprite goodSprite;
     public Sprite redSprite;
 
+    void Start()
+    {
+        BIGGeneratorGO = GameObject.Find("BIGGenerator");
+    }
+
     public override void Interact()
     {
         Repair();

@@ -9,8 +9,11 @@ public class Barrel_spawn : MonoBehaviour
     public Transform[] barrelSpawnPoints = new Transform[10];
     public GameObject[] items = new GameObject[1];
 
+    public static Barrel_spawn Instance;
+
     void Start()
     {
+        Instance = this;
         SpawnBarrel();
     }
 
@@ -33,6 +36,7 @@ public class Barrel_spawn : MonoBehaviour
         Transform spawnPoint = GetBarrelSpawnPoint();
         GameObject barrel = GetBarrel();
         GameObject c = Instantiate(barrel, spawnPoint.position, spawnPoint.rotation) as GameObject;
+        c.transform.localEulerAngles = new Vector3(60, 0, 0);
         return c;
     }
 }

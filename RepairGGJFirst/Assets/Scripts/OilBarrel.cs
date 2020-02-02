@@ -36,31 +36,35 @@ public class OilBarrel : InteractableObject
 
         if(OilLevel <= 0)
         {
-        Destroy(gameObject);
             Debug.Log("destroy");
+            Destroy(gameObject);
         }
     }
 
     public override void Interact()
     {
-        if (OnHold)
+        Debug.Log(Inserted + " , " + OnHold);
+        if (!Inserted)
         {
-            transform.SetParent(null);
-            OnHold = false;
-            if(!BigGenerator.Instance.CurrentBarrel && Vector3.Distance(PlayerMovement.Instance.transform.position, BigGenerator.Instance.transform.position) <PlayerMovement.Instance.maximumInteractionDistance)
+            if (OnHold)
             {
-                transform.SetParent(BigGenerator.Instance.transform);
-                Inserted = true;
-                
-                this.transform.position = new Vector3(-5.58f, 0.15f, 0.35f);
-                BigGenerator.Instance.CurrentBarrel = this;
-
+                transform.SetParent(null);
+                OnHold = false;
+                if (!BigGenerator.Instance.CurrentBarrel && Vector3.Distance(PlayerMovement.Instance.transform.position, BigGenerator.Instance.transform.position) < PlayerMovement.Instance.maximumInteractionDistance)
+                {
+                    transform.SetParent(BigGenerator.Instance.transform);
+                    Inserted = true; 
+                   // this.transform.position = new Vector3(-5.58f, 0.15f, 0.35f);
+                    this.transform.position = new Vector3(-5.58f + 0.189f, 0.15f, 0.35f);
+                    BigGenerator.Instance.CurrentBarrel = this;
+                    Barrel_spawn.Instance.SpawnBarrel();
+                }
             }
-        }
-        else
-        {
-            transform.SetParent(PlayerMovement.Instance.holder);
-            OnHold = true;
+            else
+            {
+                transform.SetParent(PlayerMovement.Instance.holder);
+                OnHold = true;
+            }
         }
     }
 }
