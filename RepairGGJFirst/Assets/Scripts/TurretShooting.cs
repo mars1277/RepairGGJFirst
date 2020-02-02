@@ -12,6 +12,8 @@ public class TurretShooting : InteractableObject
     public float bulletTimer = 0f;
     public float bulletCD = 1f;
     public float range = 2f;
+    public Sprite goodSprite;
+    public Sprite redSprite;
 
 
     public float workingTime = 10.2f;
@@ -25,6 +27,7 @@ public class TurretShooting : InteractableObject
     // Start is called before the first frame update
     void Start()
     {
+        this.GetComponent<SpriteRenderer>().sprite = redSprite;
         BIGGeneratorGO = GameObject.Find("BIGGenerator");
         playerGO = GameObject.Find("Player");
     }
@@ -78,6 +81,7 @@ public class TurretShooting : InteractableObject
                 overHeated = true;
                 workingTimer = 0f;
                 targetGO = null;
+
             }
         } else if(overHeated)
         {
@@ -135,6 +139,7 @@ public class TurretShooting : InteractableObject
             destroyed = false;
             bulletTimer = float.MaxValue;
             workingTimer = 0f;
+            this.GetComponent<SpriteRenderer>().sprite = goodSprite;
         }
     }
 }

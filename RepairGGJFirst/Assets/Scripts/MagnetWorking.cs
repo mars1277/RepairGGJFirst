@@ -20,6 +20,9 @@ public class MagnetWorking : MonoBehaviour
 
     public bool outOfPower = false;
 
+    public Sprite goodSprite;
+    public Sprite redSprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +51,7 @@ public class MagnetWorking : MonoBehaviour
             else
             {
                 destroyed = true;
+                this.GetComponent<SpriteRenderer>().sprite = redSprite;
                 overHeated = true;
                 workingTimer = 0f;
                 targetGO = null;
@@ -79,6 +83,7 @@ public class MagnetWorking : MonoBehaviour
         if (!overHeated && destroyed)
         {
             destroyed = false;
+            this.GetComponent<SpriteRenderer>().sprite = goodSprite;
             bulletTimer = float.MaxValue;
             workingTimer = 0f;
             BIGGeneratorGO.GetComponent<WhoIsTheTarget>().newTarget = gameObject;

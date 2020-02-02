@@ -17,13 +17,14 @@ public class EnemySpawn : MonoBehaviour
 
     void Start()
     {
-        currentEnemyNumber = Random.Range(minEnemyNumber, maxEnemyNumber);
+        currentEnemyNumber = Random.Range(minEnemyNumber, maxEnemyNumber + 1);
 
         for (int i = 0; i < currentEnemyNumber; i++)
         {
             SpawnEnemy();
             Debug.Log("First Wave");
         }
+        Debug.Log("firstenemy " + currentEnemyNumber);
 
         minEnemyNumber++;
         maxEnemyNumber++;
@@ -31,11 +32,11 @@ public class EnemySpawn : MonoBehaviour
         Instance = this;
     }
 
-    public void Update()
+    public void CheckEndWave()
     {
-        if(currentEnemyNumber == 0)
+        if(currentEnemyNumber <= 0)
         {
-            currentEnemyNumber = Random.Range(minEnemyNumber, maxEnemyNumber);
+            currentEnemyNumber = Random.Range(minEnemyNumber, maxEnemyNumber + 1);
             Debug.Log("new wave");
             for (int i = 0; i < currentEnemyNumber; i++)
             {

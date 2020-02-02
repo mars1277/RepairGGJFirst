@@ -221,10 +221,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetGO: {fileID: 0}
   radius: 5000
-  magnetTimer: 0
+  slowingTimer: 0
   workingTime: 10.2
   workingTimer: 0
   overHeatedTime: 5
   overHeated: 0
   destroyed: 1
   outOfPower: 0
+  goodSprite: {fileID: 21300000, guid: 5833947f59226bf4aa93fdd12382ada9, type: 3}
+  redSprite: {fileID: 21300000, guid: 1635aebcf93a8904c8ae2cde8ca4e4b6, type: 3}

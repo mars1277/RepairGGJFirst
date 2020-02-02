@@ -7,7 +7,8 @@ public class EnemyMovement : MonoBehaviour
 {
     public GameObject BIGGeneratorGO;
    // public GameObject cameraGO;
-    public float speed = 5f;
+    public float normalspeed = 5f;
+    public float speed;
     public Vector3 destination;
 
     public NavMeshAgent agent;
@@ -17,6 +18,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speed = normalspeed;
         BIGGeneratorGO = GameObject.Find("BIGGenerator");
         agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
         agent.SetDestination(BIGGeneratorGO.transform.GetChild(0).transform.position);
@@ -66,7 +68,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void SlowDownPls()
     {
-        speed = 1;
-        Debug.Log("decreased speed");
+        speed = normalspeed * 0.7f;
+        Debug.Log("decreased speed" + normalspeed);
     }
 }

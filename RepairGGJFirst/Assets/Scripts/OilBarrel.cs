@@ -9,6 +9,8 @@ public class OilBarrel : InteractableObject
     public bool Inserted = false;
     public bool OnHold = false;
 
+    public GameObject Fuelized;
+
 
     void Update()
     {
@@ -40,7 +42,7 @@ public class OilBarrel : InteractableObject
             {
                 transform.SetParent(BigGenerator.Instance.transform);
                 Inserted = true;
-                this.transform.position = new Vector3();
+                this.transform.position = new Vector3(-5.58f, 0.15f, 0.35f);
                 BigGenerator.Instance.CurrentBarrel = this;
 
             }

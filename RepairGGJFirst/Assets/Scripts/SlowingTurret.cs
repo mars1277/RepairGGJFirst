@@ -18,6 +18,9 @@ public class SlowingTurret : InteractableObject
 
     public bool outOfPower = false;
 
+    public Sprite goodSprite;
+    public Sprite redSprite;
+
     public override void Interact()
     {
         Repair();
@@ -52,6 +55,7 @@ public class SlowingTurret : InteractableObject
             else
             {
                 destroyed = true;
+                this.GetComponent<SpriteRenderer>().sprite = redSprite;
                 overHeated = true;
                 workingTimer = 0f;
                 targetGO = null;
@@ -77,6 +81,7 @@ public class SlowingTurret : InteractableObject
         if (!overHeated && destroyed)
         {
             destroyed = false;
+            this.GetComponent<SpriteRenderer>().sprite = goodSprite;
             slowingTimer = float.MaxValue;
             workingTimer = 0f;
         }
