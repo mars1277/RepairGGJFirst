@@ -5,29 +5,45 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 
 {
-
+    public int minEnemyNumber = 3;
+    public int maxEnemyNumber = 5;
     public Transform[] enemySpawnPoints = new Transform[10];
     public GameObject[] items = new GameObject[1];
-    public int minEnemyNumber = 1;
-    public int maxEnemyNumber = 1;
-    int currentEnemyNumber;
+
+
+    public static EnemySpawn Instance;
+
+    public int currentEnemyNumber;
 
     void Start()
     {
-       currentEnemyNumber = Random.Range(minEnemyNumber, maxEnemyNumber);
+        currentEnemyNumber = Random.Range(minEnemyNumber, maxEnemyNumber);
 
         for (int i = 0; i < currentEnemyNumber; i++)
         {
             SpawnEnemy();
         }
 
-       minEnemyNumber++;
-       maxEnemyNumber++;
-       Debug.Log(minEnemyNumber + maxEnemyNumber);
+        minEnemyNumber++;
+        maxEnemyNumber++;
+        Debug.Log("minimum" + minEnemyNumber + "maximum" + maxEnemyNumber);
+
+        Instance = this;
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
+        if(currentEnemyNumber == 0)
+        {
+            currentEnemyNumber = Random.Range(minEnemyNumber, maxEnemyNumber);
+            Debug.Log("new wave");
+            for (int i = 0; i < currentEnemyNumber; i++)
+            {
+                SpawnEnemy();
+            }
+            minEnemyNumber++;
+            maxEnemyNumber++;
+        }
         
     }
 
