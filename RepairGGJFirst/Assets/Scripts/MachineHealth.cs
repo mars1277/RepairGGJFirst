@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MachineHealth : MonoBehaviour
 {
-    public int health = 10;
+    public int health = 500;
 
     public void DealDamage()
     {
