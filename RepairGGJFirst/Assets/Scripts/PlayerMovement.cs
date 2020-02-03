@@ -36,43 +36,28 @@ public class PlayerMovement : MonoBehaviour
             Roadhouse.Instance.direction = Directions.UP_RIGHT;
             Roadhouse.Instance.UpdateCapsule();
         }
-        if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
+        else if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
             usingTwoKeyToMove = true;
             transform.position += new Vector3(speed * Time.deltaTime * sqrtTwo, 0, -speed * Time.deltaTime * sqrtTwo);
             Roadhouse.Instance.direction = Directions.DOWN_RIGHT;
             Roadhouse.Instance.UpdateCapsule();
         }
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)))
+        else if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)))
         {
             usingTwoKeyToMove = true;
             transform.position += new Vector3(-speed * Time.deltaTime * sqrtTwo, 0, speed * Time.deltaTime * sqrtTwo);
             Roadhouse.Instance.direction = Directions.UP_LEFT;
             Roadhouse.Instance.UpdateCapsule();
         }
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
+        else if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
             usingTwoKeyToMove = true;
             transform.position += new Vector3(-speed * Time.deltaTime * sqrtTwo, 0, -speed * Time.deltaTime * sqrtTwo);
             Roadhouse.Instance.direction = Directions.DOWN_LEFT;
             Roadhouse.Instance.UpdateCapsule();
         }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            InteractableObject target = InteractableObject.Instances.Where(x => Vector3.Distance(transform.position, x.transform.position) < maximumInteractionDistance).OrderBy(x => Vector3.Distance(transform.position, x.transform.position)).FirstOrDefault();
-            if (target == null)
-            {
-                Debug.Log("no target");
-            }
-            else
-            {
-                Debug.LogFormat("interact with {0}", target.gameObject.name);
-            }
-            target?.Interact();
-        }
-
-        if (!usingTwoKeyToMove)
+        else if (!usingTwoKeyToMove)
         {
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
@@ -98,6 +83,20 @@ public class PlayerMovement : MonoBehaviour
                 Roadhouse.Instance.direction = Directions.DOWN;
                 Roadhouse.Instance.UpdateCapsule();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            InteractableObject target = InteractableObject.Instances.Where(x => Vector3.Distance(transform.position, x.transform.position) < maximumInteractionDistance).OrderBy(x => Vector3.Distance(transform.position, x.transform.position)).FirstOrDefault();
+            if (target == null)
+            {
+                Debug.Log("no target");
+            }
+            else
+            {
+                Debug.LogFormat("interact with {0}", target.gameObject.name);
+            }
+            target?.Interact();
         }
     }
 }
