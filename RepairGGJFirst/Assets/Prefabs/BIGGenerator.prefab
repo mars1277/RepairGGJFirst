@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 3759469934735056237}
   - component: {fileID: 3759469934735056236}
   - component: {fileID: 1716650090256423878}
+  - component: {fileID: 7316853346891008518}
   m_Layer: 0
   m_Name: BIGGenerator
   m_TagString: EnemyTarget
@@ -156,6 +157,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holder: {fileID: 2640522841810322609}
   CurrentBarrel: {fileID: 0}
+--- !u!208 &7316853346891008518
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759469934735056239}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4, y: 50, z: 4}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6089713348702072455
 GameObject:
   m_ObjectHideFlags: 0
