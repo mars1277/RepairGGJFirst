@@ -840,7 +840,27 @@ PrefabInstance:
     - target: {fileID: 2390673369147954434, guid: 93290b2808cfe51459103b09b0eeaf7b,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390673369147954434, guid: 93290b2808cfe51459103b09b0eeaf7b,
+        type: 3}
+      propertyPath: m_text
+      value: Welcome To Reaper Repair
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390673369147954434, guid: 93290b2808cfe51459103b09b0eeaf7b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390673369147954434, guid: 93290b2808cfe51459103b09b0eeaf7b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390673369147954434, guid: 93290b2808cfe51459103b09b0eeaf7b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2390673369147954436, guid: 93290b2808cfe51459103b09b0eeaf7b,
         type: 3}
