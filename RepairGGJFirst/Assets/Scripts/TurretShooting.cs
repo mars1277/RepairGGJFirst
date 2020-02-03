@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Audio;
 
 public class TurretShooting : InteractableObject
 {
@@ -77,6 +78,11 @@ public class TurretShooting : InteractableObject
                     bullet.GetComponent<BulletMovement>().setRotationAndDirection(tmpGO.transform.rotation, Vector3.Normalize(direction));
                     Destroy(tmpGO);
                     bulletTimer = 0f;
+                    GameObject[] objs = GameObject.FindGameObjectsWithTag("Audio");
+                    if(objs.Length == 1)
+                    {
+                        objs[0].GetComponent<Audio>().PlayLaserSound();
+                    }
                 }
                 if (targetGO != null && Mathf.Sqrt(Mathf.Pow((transform.position.x - targetGO.transform.position.x), 2) + Mathf.Pow((transform.position.y - targetGO.transform.position.y), 2)) > range)
                 {

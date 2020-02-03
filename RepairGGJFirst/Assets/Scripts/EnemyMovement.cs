@@ -52,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
 
     private IEnumerator KickBack()
     {
-        transform.parent.GetComponent<NavMeshAgent>().enabled = false;
+        transform.parent.GetComponent<NavMeshAgent>().speed = 0;
         int fallTimer = 0;
         int fallTime = 30;
         float step = 0.01f;
@@ -63,7 +63,7 @@ public class EnemyMovement : MonoBehaviour
             transform.parent.transform.position += Vector3.Normalize(transform.parent.transform.position - GameObject.Find("Player").transform.position) / fallTime * kickPower * Mathf.Pow((fallTimer + 1), 2);
             yield return new WaitForSeconds(step);
         }
-        transform.parent.GetComponent<NavMeshAgent>().enabled = true;
+        transform.parent.GetComponent<NavMeshAgent>().speed = 1.5f;
     }
 
     public void SlowDownPls()

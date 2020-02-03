@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Roadhouse : MonoBehaviour
 {
@@ -29,9 +30,17 @@ public class Roadhouse : MonoBehaviour
                 Debug.Log("kick");
                 foreach (GameObject enemy in enemies)
                 {
-                    enemy.GetComponent<EnemyMovement>().KickedBack();
+                    if (enemy != null)
+                    {
+                        enemy.GetComponent<EnemyMovement>().KickedBack();
+                    }
                 }
                 roadhouseTimer = 0f;
+                GameObject[] objs = GameObject.FindGameObjectsWithTag("Audio");
+                if (objs.Length == 1)
+                {
+                    objs[0].GetComponent<Audio>().PlayKickSound();
+                }
             }
         }
     }
