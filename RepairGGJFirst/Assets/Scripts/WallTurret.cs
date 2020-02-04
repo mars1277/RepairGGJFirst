@@ -110,6 +110,9 @@ public class WallTurret : InteractableObject
             destroyed = false;
             workingTimer = 0f;
             this.GetComponent<SpriteRenderer>().sprite = goodSprite;
+            StartCoroutine(moveWall(true));
+            isWallUp = true;
+
         }
     }
 
