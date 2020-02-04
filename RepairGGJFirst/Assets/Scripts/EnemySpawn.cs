@@ -7,7 +7,7 @@ public class EnemySpawn : MonoBehaviour
 {
     public int minEnemyNumber = 3;
     public int maxEnemyNumber = 5;
-    public Transform[] enemySpawnPoints = new Transform[10];
+    public Transform[] enemySpawnPoints = new Transform[8];
     public GameObject[] items = new GameObject[1];
 
 
