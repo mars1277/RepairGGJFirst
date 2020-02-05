@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public enum Directions
     {
-        UP, DOWN, LEFT,RIGHT,UP_LEFT,UP_RIGHT,DOWN_LEFT,DOWN_RIGHT
+        UP, DOWN, LEFT, RIGHT, UP_LEFT, UP_RIGHT, DOWN_LEFT, DOWN_RIGHT
     }
 
     public float speed = 10.0f;
@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float maximumInteractionDistance = 3.5f;
     public static PlayerMovement Instance;
     public Transform holder;
+    private Rigidbody rb;
 
     public void Awake()
     {
@@ -23,37 +24,43 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-
+        rb = transform.GetComponent<Rigidbody>();
     }
 
     void Update()
     {
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
         bool usingTwoKeyToMove = false;
         if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)))
         {
             usingTwoKeyToMove = true;
-            transform.position += new Vector3(speed * Time.deltaTime * sqrtTwo, 0, speed * Time.deltaTime * sqrtTwo);
+            //transform.position += new Vector3(speed * Time.deltaTime * sqrtTwo, 0, speed * Time.deltaTime * sqrtTwo);
+            rb.velocity = new Vector3(speed * sqrtTwo, 0, speed * sqrtTwo);
             Roadhouse.Instance.direction = Directions.UP_RIGHT;
             Roadhouse.Instance.UpdateCapsule();
         }
         else if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
             usingTwoKeyToMove = true;
-            transform.position += new Vector3(speed * Time.deltaTime * sqrtTwo, 0, -speed * Time.deltaTime * sqrtTwo);
+            //transform.position += new Vector3(speed * Time.deltaTime * sqrtTwo, 0, -speed * Time.deltaTime * sqrtTwo);
+            rb.velocity = new Vector3(speed * sqrtTwo, 0, -speed * sqrtTwo);
             Roadhouse.Instance.direction = Directions.DOWN_RIGHT;
             Roadhouse.Instance.UpdateCapsule();
         }
         else if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)))
         {
             usingTwoKeyToMove = true;
-            transform.position += new Vector3(-speed * Time.deltaTime * sqrtTwo, 0, speed * Time.deltaTime * sqrtTwo);
+            // transform.position += new Vector3(-speed * Time.deltaTime * sqrtTwo, 0, speed * Time.deltaTime * sqrtTwo);
+            rb.velocity = new Vector3(-speed * sqrtTwo, 0, speed * sqrtTwo);
             Roadhouse.Instance.direction = Directions.UP_LEFT;
             Roadhouse.Instance.UpdateCapsule();
         }
         else if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
             usingTwoKeyToMove = true;
-            transform.position += new Vector3(-speed * Time.deltaTime * sqrtTwo, 0, -speed * Time.deltaTime * sqrtTwo);
+            // transform.position += new Vector3(-speed * Time.deltaTime * sqrtTwo, 0, -speed * Time.deltaTime * sqrtTwo);
+            rb.velocity = new Vector3(-speed * sqrtTwo, 0, -speed * sqrtTwo);
             Roadhouse.Instance.direction = Directions.DOWN_LEFT;
             Roadhouse.Instance.UpdateCapsule();
         }
@@ -61,27 +68,35 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
-                transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
+                // transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
+                rb.velocity = new Vector3(speed, 0, 0);
                 Roadhouse.Instance.direction = Directions.RIGHT;
                 Roadhouse.Instance.UpdateCapsule();
             }
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
-                transform.position += new Vector3(-speed * Time.deltaTime, 0, 0);
+                // transform.position += new Vector3(-speed * Time.deltaTime, 0, 0);
+                rb.velocity = new Vector3(-speed, 0, 0);
                 Roadhouse.Instance.direction = Directions.LEFT;
                 Roadhouse.Instance.UpdateCapsule();
             }
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
-                transform.position += new Vector3(0, 0, speed * Time.deltaTime);
+                // transform.position += new Vector3(0, 0, speed * Time.deltaTime);
+                rb.velocity = new Vector3(0, 0, speed);
                 Roadhouse.Instance.direction = Directions.UP;
                 Roadhouse.Instance.UpdateCapsule();
             }
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
-                transform.position += new Vector3(0, 0, -speed * Time.deltaTime);
+                // transform.position += new Vector3(0, 0, -speed * Time.deltaTime);
+                rb.velocity = new Vector3(0, 0, -speed);
                 Roadhouse.Instance.direction = Directions.DOWN;
                 Roadhouse.Instance.UpdateCapsule();
+            }
+            else
+            {
+             //   rb.velocity = new Vector3(0, 0, 0);
             }
         }
 

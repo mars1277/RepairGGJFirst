@@ -8,6 +8,7 @@ public class Roadhouse : MonoBehaviour
     public PlayerMovement.Directions direction = PlayerMovement.Directions.RIGHT;
     public float roadhouseTime = 0.3f;
     float roadhouseTimer = 999f;
+    public float kickPower = 0.015f;
     public static Roadhouse Instance;
 
 
@@ -32,7 +33,7 @@ public class Roadhouse : MonoBehaviour
                 {
                     if (enemy != null)
                     {
-                        enemy.GetComponent<EnemyMovement>().KickedBack();
+                        enemy.GetComponent<EnemyMovement>().KickedBack(kickPower);
                     }
                 }
                 roadhouseTimer = 0f;
