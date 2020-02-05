@@ -60,7 +60,7 @@ public class EnemyMovement : MonoBehaviour
         {
             fallTimer++;
             Debug.Log(new Vector3(1, 0, 0) / fallTime * kickPower * Mathf.Pow(fallTimer, 2));
-            transform.parent.transform.position += Vector3.Normalize(transform.parent.transform.position - GameObject.Find("Player").transform.position) / fallTime * kickPower * Mathf.Pow((fallTimer + 1), 2);
+            transform.parent.transform.position += Vector3.Normalize(transform.parent.transform.position - GameObject.Find("Player").transform.position) / fallTime * kickPower * Mathf.Pow((30 - fallTimer), 2);
             yield return new WaitForSeconds(step);
         }
         transform.parent.GetComponent<NavMeshAgent>().speed = 1.5f;

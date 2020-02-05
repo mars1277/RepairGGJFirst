@@ -23,6 +23,7 @@ public class SlowingTurret : InteractableObject
 
     void Start()
     {
+        this.GetComponent<SpriteRenderer>().sprite = redSprite;
         BIGGeneratorGO = GameObject.Find("BIGGenerator");
     }
 
