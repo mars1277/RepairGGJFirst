@@ -55,7 +55,7 @@ public class OilBarrel : InteractableObject
                     Debug.Log("setactive false text");
 
                     // this.transform.position = new Vector3(-5.58f, 0.15f, 0.35f);
-                    this.transform.position = new Vector3(-5.58f + 0.189f, 0.15f, 0.35f);
+                    this.transform.localPosition = new Vector3(5.4f, 3.2f, 0.1f);
                     BigGenerator.Instance.CurrentBarrel = this;
                     Barrel_spawn.Instance.SpawnBarrel();
                 }
@@ -64,6 +64,7 @@ public class OilBarrel : InteractableObject
             {
                 transform.SetParent(PlayerMovement.Instance.holder);
                 OnHold = true;
+                transform.localPosition = new Vector3(0, 0, 0);
             }
         }
     }
