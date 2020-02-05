@@ -90,6 +90,7 @@ public class TurretShooting : InteractableObject
                 }
             } else
             {
+                this.GetComponent<SpriteRenderer>().sprite = redSprite;
                 destroyed = true;
                 overHeated = true;
                 workingTimer = 0f;

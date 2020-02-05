@@ -13,8 +13,9 @@ public class CanvasManager : MonoBehaviour
         Instance = this;
     }
 
-    public void ShowBarrelFeedback()
+    public void ShowBarrelFeedback(string Feedback)
     {
+        barrelFeedback.GetComponent<TMPro.TextMeshProUGUI>().text = Feedback;
         StartCoroutine(DelayIE());
     }
 

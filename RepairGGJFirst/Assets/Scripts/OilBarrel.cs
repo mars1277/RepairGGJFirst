@@ -34,6 +34,7 @@ public class OilBarrel : InteractableObject
         if (OilLevel <= 0)
         {
             Debug.Log("destroy");
+            CanvasManager.Instance.ShowBarrelFeedback("Out of power!");
             Destroy(gameObject);
         }
     }
@@ -51,7 +52,7 @@ public class OilBarrel : InteractableObject
                 {
                     transform.SetParent(BigGenerator.Instance.transform);
                     Inserted = true;
-                    CanvasManager.Instance.ShowBarrelFeedback();
+                    CanvasManager.Instance.ShowBarrelFeedback("Fuelized");
                     Debug.Log("setactive false text");
 
                     // this.transform.position = new Vector3(-5.58f, 0.15f, 0.35f);
