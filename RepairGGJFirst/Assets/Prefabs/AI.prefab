@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0b74224a8a67543a7b5a463f26a08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 1
 --- !u!114 &6812497342514495159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +66,6 @@ MonoBehaviour:
   speed: 1.5
   destination: {x: 0, y: 0, z: 0}
   agent: {fileID: 0}
-  kickPower: 0.004
 --- !u!54 &6812497342514495158
 Rigidbody:
   m_ObjectHideFlags: 0

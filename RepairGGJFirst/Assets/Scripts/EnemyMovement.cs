@@ -13,7 +13,6 @@ public class EnemyMovement : MonoBehaviour
 
     public NavMeshAgent agent;
 
-    public float kickPower = 0.004f;
 
     // Start is called before the first frame update
     void Start()
@@ -44,13 +43,13 @@ public class EnemyMovement : MonoBehaviour
       //  transform.rotation = Quaternion.LookRotation(cameraGO.transform.position - transform.position, transform.up);
     }
     
-    public void KickedBack()
+    public void KickedBack(float kickPower)
     {
         Debug.Log("kicked");
-        StartCoroutine(KickBack());
+        StartCoroutine(KickBack(kickPower));
     }
 
-    private IEnumerator KickBack()
+    private IEnumerator KickBack(float kickPower)
     {
         transform.parent.GetComponent<NavMeshAgent>().speed = 0;
         int fallTimer = 0;

@@ -26,6 +26,7 @@ public class MagnetWorking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.GetComponent<SpriteRenderer>().sprite = redSprite;
         BIGGeneratorGO = GameObject.Find("BIGGenerator");
         playerGO = GameObject.Find("Player");
     }
