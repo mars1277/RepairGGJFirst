@@ -6,7 +6,7 @@ public class Barrel_spawn : MonoBehaviour
 
 {
 
-    public Transform[] barrelSpawnPoints = new Transform[10];
+    public Transform[] barrelSpawnPoints = new Transform[5];
     public GameObject[] items = new GameObject[1];
 
     public static Barrel_spawn Instance;
