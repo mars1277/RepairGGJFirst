@@ -12,7 +12,7 @@ public class TurretShooting : InteractableObject
     private GameObject playerGO;
     public float bulletTimer = 0f;
     public float bulletCD = 0.5f;
-    public float range = 2f;
+    public float range = 20f;
     public Sprite goodSprite;
     public Sprite redSprite;
 
@@ -68,6 +68,7 @@ public class TurretShooting : InteractableObject
                 if (targetGO != null && bulletTimer > bulletCD && !outOfPower)
                 {
                     GameObject bullet = Instantiate(bulletGOPrefab, transform);
+                    Debug.Log("instantiated bullet");
                     Vector3 direction = new Vector3(targetGO.transform.position.x - transform.position.x, 0, targetGO.transform.position.z - transform.position.z);
                     float z = Mathf.Sqrt(Mathf.Pow(direction.x, 2) + Mathf.Pow(direction.y, 2));
                     GameObject tmpGO = new GameObject();
@@ -104,6 +105,7 @@ public class TurretShooting : InteractableObject
                 overHeated = false;
                 bulletTimer = 0f;
                 targetGO = null;
+                this.GetComponent<SpriteRenderer>().sprite = redSprite;
             }
         }
         
