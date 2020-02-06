@@ -71,6 +71,7 @@ public class TurretShooting : InteractableObject
                     Vector3 direction = new Vector3(targetGO.transform.position.x - transform.position.x, 0, targetGO.transform.position.z - transform.position.z);
                     float z = Mathf.Sqrt(Mathf.Pow(direction.x, 2) + Mathf.Pow(direction.y, 2));
                     GameObject tmpGO = new GameObject();
+                    Debug.Log("shoot");
                     // float rotation = 90 - 180 / Mathf.PI * Mathf.Cos(direction.y / z) / Mathf.Sin(direction.x / z);
                     /*float rotation = 180 / Mathf.PI * Mathf.Sin(direction.x / z);
                     tmpGO.transform.Rotate(0, 0, rotation);*/
