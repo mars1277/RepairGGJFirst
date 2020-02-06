@@ -124,7 +124,7 @@ public class WallTurret : InteractableObject
         int stepCounter = 0;
         while (stepCounter < steps)
         {
-            wallGO.transform.position += new Vector3(0, (up ? 1 : -1) * 0.02f, 0);
+            wallGO.transform.position += new Vector3(0, (up ? 1 : -1) * 0.05f, 0);
             yield return new WaitForSeconds(0.005f);
             stepCounter++;
         }
