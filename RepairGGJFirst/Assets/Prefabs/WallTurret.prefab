@@ -324,7 +324,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9999
-  m_Sprite: {fileID: 21300000, guid: 81bb2eb7bdc6e654f9b24abcde16852b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed14b7886b1fcbf488def0db16be0102, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -658,6 +658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2614202633886357201}
+  - component: {fileID: 953085484764841506}
   m_Layer: 0
   m_Name: BarToChange
   m_TagString: Untagged
@@ -680,3 +681,20 @@ Transform:
   m_Father: {fileID: 5406975150361274090}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &953085484764841506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9156967806357086796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c58222006d54049adaabf977ea3026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTurret: 1
+  isShootingTurret: 0
+  isSlowingTurret: 0
+  isWallTurret: 1
+  isBigGenerator: 0

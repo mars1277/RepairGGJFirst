@@ -507,7 +507,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 6000, y: 4000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974489380
 MonoBehaviour:
@@ -845,12 +845,12 @@ PrefabInstance:
     - target: {fileID: 2390673369147954434, guid: 93290b2808cfe51459103b09b0eeaf7b,
         type: 3}
       propertyPath: m_text
-      value: Welcome To Reaper Repair
+      value: Welcome To Reaper Paper
       objectReference: {fileID: 0}
     - target: {fileID: 2390673369147954434, guid: 93290b2808cfe51459103b09b0eeaf7b,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2390673369147954434, guid: 93290b2808cfe51459103b09b0eeaf7b,
         type: 3}
