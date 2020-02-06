@@ -222,8 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c32394b37a88374e9d1535cf20441d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetGO: {fileID: 6812497342886672492, guid: 8ca71e3233c974749bc59d27d44cef36,
-    type: 3}
+  targetGO: {fileID: 0}
   bulletGOPrefab: {fileID: 2874410154564580305, guid: dc58693daacbc214588ae68f57fe40a6,
     type: 3}
   bulletTimer: 0
