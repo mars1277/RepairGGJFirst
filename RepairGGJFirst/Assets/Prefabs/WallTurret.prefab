@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 520744759}
   - component: {fileID: 520744758}
   - component: {fileID: 520744762}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WallGO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,8 +75,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520744756}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15, y: -22, z: 7}
-  m_LocalScale: {x: 30, y: 30, z: 1}
+  m_LocalPosition: {x: 42.67, y: -20.39, z: 12.8}
+  m_LocalScale: {x: 84.062996, y: 30, z: 1}
   m_Children: []
   m_Father: {fileID: 330878210}
   m_RootOrder: 0
@@ -136,7 +136,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520744756}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.001219, y: 1, z: 1}
@@ -567,7 +567,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7cc38072217cd1f4f9e2596d75bf3ed6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
