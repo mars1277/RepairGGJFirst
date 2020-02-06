@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 
 {
-    public int minEnemyNumber = 3;
-    public int maxEnemyNumber = 5;
-    public Transform[] enemySpawnPoints = new Transform[8];
+    public int minEnemyNumber = 1;
+    public int maxEnemyNumber = 2;
+    public Transform[] enemySpawnPoints = new Transform[6];
     public GameObject[] items = new GameObject[1];
 
 
