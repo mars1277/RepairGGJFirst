@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 1716650090256423878}
   - component: {fileID: 7316853346891008518}
   - component: {fileID: 1546173596}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BIGGenerator
   m_TagString: EnemyTarget
   m_Icon: {fileID: 0}

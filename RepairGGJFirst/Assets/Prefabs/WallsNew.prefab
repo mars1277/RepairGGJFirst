@@ -45,6 +45,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 3930727240408617307, guid: e19bb8624d73fe94c910faffc205623d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6537499113779141425, guid: e19bb8624d73fe94c910faffc205623d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -120,6 +125,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3930727240408617307, guid: e19bb8624d73fe94c910faffc205623d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6537499113779141425, guid: e19bb8624d73fe94c910faffc205623d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -194,6 +204,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930727240408617307, guid: e19bb8624d73fe94c910faffc205623d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6537499113779141425, guid: e19bb8624d73fe94c910faffc205623d,
         type: 3}
