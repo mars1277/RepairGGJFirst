@@ -969,7 +969,7 @@ RectTransform:
   m_GameObject: {fileID: 3780678266481564033}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0381, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3780678267166328916}
   m_RootOrder: 0
@@ -1041,7 +1041,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1072,7 +1072,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -93.48227, y: 0, z: -74.63544, w: 0}
   m_textInfo:
     textComponent: {fileID: 3780678266481564035}
     characterCount: 9
@@ -1112,6 +1112,7 @@ GameObject:
   - component: {fileID: 3780678267166328915}
   - component: {fileID: 1678001782}
   - component: {fileID: 1514758291}
+  - component: {fileID: 1390927893}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1233,3 +1234,16 @@ MonoBehaviour:
   playerHealth: {fileID: 0}
   generatorHealth: {fileID: 0}
   points: {fileID: 0}
+--- !u!114 &1390927893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3780678267166328912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f694a7f6fd467846b843f921c5f2031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ultimateRotation: 60
