@@ -95,6 +95,7 @@ public class WallTurret : InteractableObject
             if (workingTimer > overHeatedTime)
             {
                 overHeated = false;
+                this.GetComponent<SpriteRenderer>().sprite = redSprite;
             }
         }
 

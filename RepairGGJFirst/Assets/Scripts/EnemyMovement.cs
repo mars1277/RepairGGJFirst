@@ -68,6 +68,5 @@ public class EnemyMovement : MonoBehaviour
     public void SlowDownPls()
     {
         speed = normalspeed * 0.5f;
-        Debug.Log("decreased speed" + normalspeed);
     }
 }
