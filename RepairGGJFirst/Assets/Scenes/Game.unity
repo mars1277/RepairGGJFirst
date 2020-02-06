@@ -1994,11 +1994,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6203805225718669585, guid: 9e815facec8958a4991a745413cc6f1b,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 25.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203805225718669585, guid: 9e815facec8958a4991a745413cc6f1b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -22.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203805225718669585, guid: 9e815facec8958a4991a745413cc6f1b,
+        type: 3}
       propertyPath: m_LocalPosition.z
       value: -129.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e815facec8958a4991a745413cc6f1b, type: 3}
+--- !u!1 &1295006570 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6203805225718669584, guid: 9e815facec8958a4991a745413cc6f1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1295006569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1295006571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295006570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce095294355000a4b9a410cfff800121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateBack: 0
+  plusRotation: -60
 --- !u!4 &1404665112 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1510023554901877759, guid: 551843f733fd08a4eb806154a05f7673,
@@ -2406,7 +2436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1390927893, guid: 8a8ac2703cffd334bae5c3adf47d58ae, type: 3}
       propertyPath: ultimateRotation
-      value: 90
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1501003786, guid: 8a8ac2703cffd334bae5c3adf47d58ae, type: 3}
       propertyPath: m_AnchorMin.y
@@ -2682,6 +2712,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BIGGenerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316853346891008518, guid: b45fced947c0cab43be09d73f163c6d3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b45fced947c0cab43be09d73f163c6d3, type: 3}
